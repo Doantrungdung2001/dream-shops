@@ -1,17 +1,19 @@
 package com.biprogy.dreamshops.service.product;
 
 import com.biprogy.dreamshops.model.Product;
+import com.biprogy.dreamshops.request.AddProductRequest;
+import com.biprogy.dreamshops.request.ProductUpdateRequest;
 
 import java.util.List;
 
 public interface IProductService {
-    Product addProduct(Product product);
+    Product addProduct(AddProductRequest request);
 
     Product getProductById(Long id);
 
     void deleteProductById(Long id);
 
-    void updateProduct(Product product, Long productId);
+    Product updateProduct(ProductUpdateRequest productUpdateRequest, Long productId);
 
     List<Product> getAllProducts();
 
@@ -23,7 +25,7 @@ public interface IProductService {
 
     List<Product> getProductByName(String name);
 
-    List<Product> getProductsByBrandAndName(String category, String name);
+    List<Product> getProductsByBrandAndName(String brand, String name);
 
     Long countProductsByBrandAndName(String brand, String name);
 
